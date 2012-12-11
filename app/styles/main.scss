@@ -1,11 +1,57 @@
 @import "compass_twitter_bootstrap";
 
+$SourceSansPro: 'Source Sans Pro', sans-serif;
+$lighterFontWeight: 200;
+$mediumFontWeight: 400;
+$heavyFontWeight: 700;
+
 body {
 	background-color: #FFFFFF;
 }
 
 header#site-header {
-	background-color: #111111;
+
+	position: relative;
+	
+	div.black-strip {
+		background-color: #111111;
+
+		h1 {
+			margin: 0px;
+			font-family: $SourceSansPro;
+			font-weight: $lighterFontWeight;
+			font-size: 36px;
+		}
+	}
+
+	nav {
+		background-color: #7B0000;
+		display: block;
+
+		ul {
+			list-style: none;
+			display: inline-block;
+			padding: 0px;
+			margin: 0px;
+
+			li {
+				float: left;
+
+				a {
+					display: inline-block;
+					padding: 10px 20px;
+					font-size: 16px;
+					color: #FFFFFF;
+					font-family: $SourceSansPro;
+					font-weight: $lighterFontWeight;
+				}
+
+				ul {
+					display: none;
+				}
+			}
+		}
+	}
 
 	a#top-logo {
 		display: block;
@@ -13,4 +59,5 @@ header#site-header {
 		height: 125px;
 		background: url(layout/cca-logo.jpg) no-repeat left top;
 	}
+
 }
