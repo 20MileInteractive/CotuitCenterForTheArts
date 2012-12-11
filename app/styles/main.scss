@@ -6,10 +6,12 @@ $mediumFontWeight: 400;
 $heavyFontWeight: 700;
 
 body {
-	background-color: #FFFFFF;
+	background-color: #ccc;
 }
 
 header#site-header {
+
+	background-color: yellow;
 
 	position: relative;
 	
@@ -17,7 +19,8 @@ header#site-header {
 		background-color: #111111;
 
 		h1 {
-			margin: 0px;
+			margin-top: 0px;
+			margin-bottom: 0px;
 			font-family: $SourceSansPro;
 			font-weight: $lighterFontWeight;
 			font-size: 36px;
@@ -26,13 +29,13 @@ header#site-header {
 
 	nav {
 		background-color: #7B0000;
-		display: block;
 
 		ul {
 			list-style: none;
 			display: inline-block;
 			padding: 0px;
-			margin: 0px;
+			margin-bottom: 0px;
+			margin-top: 0px;
 
 			li {
 				float: left;
@@ -54,6 +57,8 @@ header#site-header {
 	}
 
 	a#top-logo {
+		position: absolute;
+		top: 0px;
 		display: block;
 		width: 125px;
 		height: 125px;
