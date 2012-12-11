@@ -1,0 +1,16 @@
+@import "compass_twitter_bootstrap";
+
+body {
+	background-color: #FFFFFF;
+}
+
+header#site-header {
+	background-color: #111111;
+
+	a#top-logo {
+		display: block;
+		width: 125px;
+		height: 125px;
+		background: url(layout/cca-logo.jpg) no-repeat left top;
+	}
+}
