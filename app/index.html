@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<title></title>
 	<meta name="description" content=""/>
 	<meta name="viewport" content="width=device-width"/>
@@ -16,7 +16,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="styles/main.css"/>
-	<script src="/scripts/vendor/modernizr/modernizr.js"></script>
+	<script src="scripts/vendor/modernizr/modernizr.js"></script>
 </head>
 <body>
 	
@@ -31,21 +31,23 @@
 		<nav>
 			<div class="container">
 				<div class="row">
-					<ul class="offset2">
-						<li><a href="#"><span>Experience Art</span></a></li>
-						<li class="here">
-							<a href="#"><span>Support Art</span></a>
-							<ul>
-								<li><a href="#"><span>Become A Member</span></a></li>
-								<li><a href="#"><span>Become A Sponsor</span></a></li>
-								<li><a href="#"><span>Donate</span></a></li>
-								<li><a href="#"><span>Volunteer</span></a></li>
-							</ul>
-						</li>
-						<li><a href="#"><span>About Us</span></a></li>
-						<li><a href="#"><span>News</span></a></li>
-						<li><a href="#"><span>Contact</span></a></li>
-					</ul>
+					<div class="span12">
+						<ul>
+							<li><a href="#"><span>Experience Art</span></a></li>
+							<li>
+								<a href="#"><span>Support Art</span></a>
+								<ul>
+									<li><a href="#"><span>Become A Member</span></a></li>
+									<li><a href="#"><span>Become A Sponsor</span></a></li>
+									<li><a href="#"><span>Donate</span></a></li>
+									<li><a href="#"><span>Volunteer</span></a></li>
+								</ul>
+							</li>
+							<li><a href="#"><span>About Us</span></a></li>
+							<li><a href="#"><span>News</span></a></li>
+							<li><a href="#"><span>Contact</span></a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</nav>
@@ -54,7 +56,69 @@
 		</div>
 	</header>
 
-	<div class="main">
+	<section class="spotlight-slider">
+
+
+		<div class="slides container">
+			
+			<!-- First slide -->
+			<div class="slide">
+				<img src="images/hero-photo.jpg" alt="">
+			</div>
+
+			<!-- Second slide -->
+			<div class="slide">
+				<img src="images/hero-photo-bw.jpg" alt="">
+			</div>
+
+			<!-- Third slide -->
+			<div class="slide">
+				<img src="images/hero-photo.jpg" alt="">
+			</div>
+
+			<!-- Fourth slide -->
+			<div class="slide">
+				<img src="images/hero-photo-bw.jpg" alt="">
+			</div>
+
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<div class="slidetabs">
+						<div class="slidetab">
+							<span>Entertain.</span>
+						</div>
+						<div class="caption">
+							<a href="#">1 Lorem ipsum veniam magna consequat Duis ut culpa laboris. </a>
+						</div>
+						<div class="slidetab">
+							<span>Educate.</span>
+						</div>
+						<div class="caption">
+							<a href="#">2 Lorem ipsum veniam magna consequat Duis ut culpa laboris. </a>
+						</div>
+						<div class="slidetab">
+							<span>Illuminate.</span>
+						</div>
+						<div class="caption">
+							<a href="#">3 Lorem ipsum veniam magna consequat Duis ut culpa laboris. </a>
+						</div>
+						<div class="slidetab">
+							<span>Inspire.</span>
+						</div>
+						<div class="caption">
+							<a href="#">4 Lorem ipsum veniam magna consequat Duis ut culpa laboris. </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<section class="main">
 		<div class="container">
 			<div class="row">
 				<div class="span12">
@@ -67,13 +131,23 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 	<!--[if lt IE 7]>
 	<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
 	<![endif]-->
 
 	<!-- Add your site or application content here -->
+	<script src="scripts/vendor/jquery/jquery.min.js"></script>
 
+	<!-- Bootstrap Scripts -->
+	
+
+	<!-- jQueryTools -->
+	<script src="scripts/vendor/jquerytools/src/tabs/tabs.js"></script>
+	<script src="scripts/vendor/jquerytools/src/tabs/tabs.slideshow.js"></script>
+
+	<!-- Site Scripts -->
+	<script src="scripts/script.js"></script>
 </body>
 </html>
