@@ -1,4 +1,9 @@
-@import "compass_twitter_bootstrap";
+// Variables
+
+// Bootstrap override
+$warningText:             #7B0000;
+$warningBackground:       #F2D754;
+$warningBorder:           #F2D754;
 
 // Fonts
 $SourceSansPro: 'Source Sans Pro', sans-serif;
@@ -7,15 +12,49 @@ $MediumFontWeight: 400;
 $HeavyFontWeight: 700;
 
 // Nav colors
-$NavBGColor: #7B0000;
-$NavHoverBGColor: #6A0000;
+$red: #7B0000;
+$darkRed: #6A0000;
+
 $NavFontColor: #FFFFFF;
-$NavBorderColor: #000000;
+
+@import "compass_twitter_bootstrap";
+@import "compass/typography/lists/horizontal-list";
 
 body {
 	font-family: $SourceSansPro;
 	font-weight: $MediumFontWeight;
 	font-size: 16px;
+	background-color: #EEEEEE;
+}
+
+h1 {
+	font-weight: $LighterFontWeight;
+	font-size: 36px;
+	letter-spacing: 2px;
+}
+
+.alert {
+	margin-bottom: 10px;
+	span {
+		color: $black;
+		margin-right: 16px;
+	}
+}
+
+.btn {
+	@extend .btn;
+	@include buttonBackground($darkRed, $red, $white, none);
+	@include border-radius(0px);
+	padding: 4px 6px 4px 10px;
+	font-weight: $LighterFontWeight;
+	letter-spacing: 1px;
+}
+
+.icon-my-arrow {
+	background-image: url(layout/arrow.png);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	padding-left: 8px;
 }
 
 header#site-header {
@@ -30,15 +69,13 @@ header#site-header {
 		h1 {
 			margin-top: 0px;
 			margin-bottom: 0px;
-			font-weight: $LighterFontWeight;
-			font-size: 36px;
-			letter-spacing: 2px;
+			color: $darkRed;
 		}
 	}
 
 	nav {
 
-		background-color: $NavBGColor;
+		background-color: $red;
 
 		ul {
 			list-style: none;
@@ -49,10 +86,10 @@ header#site-header {
 			li {
 				float: left;
 				position: relative;
-				border-right: 1px solid $NavBorderColor;
+				border-right: 1px solid $black;
 
 				&.here {
-					background-color: $NavHoverBGColor;
+					background-color: $darkRed;
 				}
 
 				a {
@@ -81,7 +118,7 @@ header#site-header {
 
 					li {
 						float: none;
-						background-color: $NavHoverBGColor;
+						background-color: $darkRed;
 						border-right: 0px;
 
 						a {
@@ -98,13 +135,13 @@ header#site-header {
 				}
 
 				&:hover {
-					background-color: $NavHoverBGColor;
+					background-color: $darkRed;
 
 					ul {
 						display: block;
 
 						li:hover {
-							background-color: $NavBGColor;
+							background-color: $red;
 						}
 					}
 				}
@@ -124,10 +161,10 @@ header#site-header {
 }
 
 .spotlight-slider {
-	background-color: #000;
-	border-bottom: 3px solid #000;
-
+	background-color: $black;
+	border-bottom: 3px solid $black;
 	position: relative;
+	margin-bottom: 30px;
 
 	.slides {
 
@@ -196,9 +233,39 @@ header#site-header {
 			padding: 16px 16px;
 
 			a {
-				color: $NavHoverBGColor;
+				color: $darkRed;
 				background: url(layout/arrow.png) no-repeat right center;
 				padding-right: 30px;
+			}
+		}
+	}
+}
+
+ul.home-panes {
+	@include horizontal-list-container;
+
+	li {
+		@include horizontal-list-item(0px);
+		margin:{
+			right: 20px;
+			bottom: 20px;
+		};
+
+		a {
+			display: block;
+
+			img {
+				display: block;
+			}
+
+			span {
+				display: block;
+				background-color: $darkRed;
+				color: $white;
+				font-weight: $LighterFontWeight;
+				padding: 6px;
+				font-size: 24px;
+				background: $darkRed url(layout/arrow.png) no-repeat 97.5% center;
 			}
 		}
 	}
