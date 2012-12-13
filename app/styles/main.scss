@@ -1,36 +1,15 @@
-// Variables
+// Main Style
 
-// Bootstrap override
-$warningText:             #7B0000;
-$warningBackground:       #F2D754;
-$warningBorder:           #F2D754;
-
-// Fonts
-$SourceSansPro: 'Source Sans Pro', sans-serif;
-$LighterFontWeight: 200;
-$MediumFontWeight: 400;
-$HeavyFontWeight: 700;
-
-// Nav colors
-$red: #7B0000;
-$darkRed: #6A0000;
-
-$NavFontColor: #FFFFFF;
-
-@import "compass_twitter_bootstrap";
-@import "compass/typography/lists/horizontal-list";
+@import "base";
 
 body {
-	font-family: $SourceSansPro;
-	font-weight: $MediumFontWeight;
-	font-size: 16px;
 	background-color: #EEEEEE;
 }
 
 h1 {
-	font-weight: $LighterFontWeight;
-	font-size: 36px;
+	@include site-font(36px, $LighterFontWeight);
 	letter-spacing: 2px;
+	line-height: 40px;
 }
 
 .alert {
@@ -45,8 +24,8 @@ h1 {
 	@extend .btn;
 	@include buttonBackground($darkRed, $red, $white, none);
 	@include border-radius(0px);
+	@include site-font(14px, $LighterFontWeight);
 	padding: 4px 6px 4px 10px;
-	font-weight: $LighterFontWeight;
 	letter-spacing: 1px;
 }
 
@@ -93,12 +72,10 @@ header#site-header {
 				}
 
 				a {
-					
+					@include site-font(16px, $LighterFontWeight);
 					display: inline-block;
 					padding: 12px 30px 15px 30px;
-					font-size: 16px;
 					color: $NavFontColor;
-					font-weight: $LighterFontWeight;
 
 					&:hover {
 						text-decoration: none;
@@ -124,7 +101,7 @@ header#site-header {
 						a {
 							padding: 10px 10px;
 							display: block;
-							font-size: 14px;
+							@include site-font(14px, $LighterFontWeight);
 
 							span {
 								padding: 0px;
@@ -195,7 +172,7 @@ header#site-header {
 			display: block;
 			float: left;
 			margin-right: 10px;
-			margin-bottom: 57px;
+			margin-bottom: 58px;
 			padding-bottom: 12px;
 
 			&.current {
@@ -212,7 +189,7 @@ header#site-header {
 			}
 
 			span {
-				font-size: 24px;
+				@include site-font(24px, $MediumFontWeight);
 				color: #FFF;
 				opacity: 0.6;
 				letter-spacing: 2px;
@@ -233,6 +210,7 @@ header#site-header {
 			padding: 16px 16px;
 
 			a {
+				@include site-font(16px, $LighterFontWeight);
 				color: $darkRed;
 				background: url(layout/arrow.png) no-repeat right center;
 				padding-right: 30px;
@@ -266,6 +244,63 @@ ul.home-panes {
 				padding: 6px;
 				font-size: 24px;
 				background: $darkRed url(layout/arrow.png) no-repeat 97.5% center;
+			}
+		}
+	}
+}
+
+footer {
+
+	header {
+		h1 {
+			@extend h1;
+			font-size: 24px;
+			text-align: center;
+			color: $red;
+			border-bottom: 1px solid #CCCCCC;
+			margin-bottom: 40px;
+		}
+	}
+
+	.span2 {
+		header {
+			h1 {
+				@include site-font(16px, $HeavyFontWeight);
+				text-align: left;
+				line-height: 30px;
+			}
+		}
+
+		ul {
+			@include no-bullets;
+			margin: 0px 0px 26px 0px;
+			padding: 0px;
+
+			li {
+
+				margin: 5px 0;
+				a {
+					@include site-font(16px, $LighterFontWeight);
+					color: #999999;
+
+					&:hover {
+						text-decoration: none;
+						color: darken(#999999, 30%);
+					}
+				}
+			}
+		}
+	}
+
+	.span3 {
+		@include site-font(14px, $MediumFontWeight);
+		color: #999999;
+		margin-top: 16px;
+		a {
+			color: #999999;	
+			&:hover {
+				text-decoration: none;
+				color: darken(#999999, 30%);
 			}
 		}
 	}
