@@ -101,7 +101,7 @@ header#site-header {
 				a {
 					@include site-font(16px, $LighterFontWeight);
 					display: inline-block;
-					padding: 12px 30px 15px 30px;
+					padding: 12px 27px 15px 27px;
 					color: $NavFontColor;
 
 					&:hover {
@@ -345,6 +345,7 @@ footer {
 				@include site-font(16px, $HeavyFontWeight);
 				text-align: left;
 				line-height: 30px;
+				margin-bottom: 10px
 			}
 		}
 
