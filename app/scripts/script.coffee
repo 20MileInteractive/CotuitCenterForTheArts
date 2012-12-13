@@ -10,5 +10,5 @@ $ ->
 		tabs: 'div.slidetab'
 	}).slideshow()
 
-	$(".slidetabs").data("slideshow").play()
+	# $(".slidetabs").data("slideshow").play()
 
