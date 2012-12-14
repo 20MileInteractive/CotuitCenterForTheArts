@@ -1,0 +1,53 @@
+CACHE MANIFEST
+
+# Time: Fri Dec 14 2012 12:39:39 GMT-0500 (EST)
+# This manifest was created by confess.js, http://github.com/jamesgpearce/confess
+#
+# Retrieved URL: http://localhost:3501/
+# User-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.12 Safari/535.11
+#
+# Config:
+#  task: appcache
+#  userAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.12 Safari/535.11
+#  wait: 0
+#  consolePrefix: #
+#  verbose: true
+#  appcache:
+#   urlsFromDocument: true
+#   urlsFromRequests: false
+#   cacheFilter: .*
+#   networkFilter: null
+#  url: http://localhost:3501
+#  configFile: /usr/local/lib/node_modules/yeoman/lib/support/confess.json
+
+CACHE:
+http://flickholdr.com/119/119/landscape
+http://flickholdr.com/119/119/nursing
+http://flickholdr.com/119/119/painting
+http://flickholdr.com/119/119/winery
+http://flickholdr.com/240/240/beer
+http://flickholdr.com/300/181/classes
+http://flickholdr.com/300/181/concert
+http://flickholdr.com/300/181/events
+http://flickholdr.com/300/181/film
+http://flickholdr.com/300/181/gallery
+http://flickholdr.com/300/181/theater
+http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700
+http://localhost:3501/img/glyphicons-halflings-white.png
+http://localhost:3501/img/glyphicons-halflings.png
+http://localhost:3501/styles/layout/angled_arrow.png
+http://localhost:3501/styles/layout/black-arrow.png
+http://localhost:3501/styles/layout/cca-logo.jpg
+http://localhost:3501/styles/layout/white-up-arrow.png
+images/1eab9f65.hero-photo-bw.jpg
+images/2f6849f8.hero-photo.jpg
+scripts/87bba4ea.script.js
+scripts/vendor/bootstrap/js/dcc49f61.bootstrap-alert.js
+scripts/vendor/jquery/3576a6e7.jquery.min.js
+scripts/vendor/jquerytools/src/tabs/6dd98b0a.tabs.slideshow.js
+scripts/vendor/jquerytools/src/tabs/f7f42219.tabs.js
+scripts/vendor/modernizr/b2bf8288.modernizr.js
+styles/b5461719.main.css
+
+NETWORK:
+*
