@@ -25,6 +25,7 @@ h1 {
 	@include buttonBackground($darkRed, $red, $white, none);
 	@include border-radius(0px);
 	@include site-font(14px, $LighterFontWeight);
+	@include box-shadow(none);
 	padding: 4px 6px 4px 10px;
 	letter-spacing: 1px;
 
@@ -33,7 +34,6 @@ h1 {
 		@include site-font(15px, $HeavyFontWeight);
 		letter-spacing: 0px;
 		padding: 4px;
-		@include box-shadow(none);
 
 		.input-append & {
 			@include border-radius(0px);
@@ -281,6 +281,39 @@ ul.home-panes {
 				background: $darkRed url(layout/arrow.png) no-repeat 97.5% center;
 			}
 		}
+	}
+}
+
+.sponsor-box {
+	background-color: #EEEEEE;
+	ul.thumbnails {
+		margin: 0px;
+		padding: 1px;
+
+		li {
+			margin: 0px 1px 2px 1px;
+			width: 107px;
+
+			&.top {
+				width: 216px;
+				margin: 0px 1px 0px 1px;
+			}
+
+			a.thumbnail {
+				@include border-radius(0px);
+				background-color: $white;
+				border: 0px;
+				padding: 4px;
+			}
+		}
+	}
+
+	.btn {
+		width: 199px;
+		text-align: left;
+		margin-left: 2px;
+
+		i { float: right; }
 	}
 }
 
