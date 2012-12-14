@@ -57,7 +57,7 @@ input[type="email"] {
 }
 
 .icon-my-arrow {
-	background-image: url(layout/arrow.png);
+	background-image: url(layout/black-arrow.png);
 	background-position: right bottom;
 	background-repeat: no-repeat;
 	padding-left: 8px;
@@ -239,7 +239,7 @@ header#site-header {
 			a {
 				@include site-font(16px, $LighterFontWeight);
 				color: $darkRed;
-				background: url(layout/arrow.png) no-repeat right center;
+				background: url(layout/black-arrow.png) no-repeat right center;
 				padding-right: 30px;
 			}
 		}
@@ -278,7 +278,7 @@ ul.home-panes {
 				font-weight: $LighterFontWeight;
 				padding: 6px 6px 7px 6px;
 				font-size: 22px;
-				background: $darkRed url(layout/arrow.png) no-repeat 97.5% center;
+				background: $darkRed url(layout/black-arrow.png) no-repeat 97.5% center;
 			}
 		}
 	}
