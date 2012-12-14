@@ -284,39 +284,6 @@ ul.home-panes {
 	}
 }
 
-.sponsor-box {
-	background-color: #EEEEEE;
-	ul.thumbnails {
-		margin: 0px;
-		padding: 1px;
-
-		li {
-			margin: 0px 1px 2px 1px;
-			width: 107px;
-
-			&.top {
-				width: 216px;
-				margin: 0px 1px 0px 1px;
-			}
-
-			a.thumbnail {
-				@include border-radius(0px);
-				background-color: $white;
-				border: 0px;
-				padding: 4px;
-			}
-		}
-	}
-
-	.btn {
-		width: 199px;
-		text-align: left;
-		margin-left: 2px;
-
-		i { float: right; }
-	}
-}
-
 aside {
 	ul {
 		@include no-bullets;
@@ -355,6 +322,39 @@ aside {
 	form {
 		input[type="email"] {
 			width: 180px;
+		}
+	}
+
+	.sponsor-box {
+		background-color: #EEEEEE;
+		ul.thumbnails {
+			margin: 0px;
+			padding: 1px;
+
+			li {
+				margin: 0px 1px 2px 1px;
+				width: 107px;
+
+				&.top {
+					width: 216px;
+					margin: 0px 1px 0px 1px;
+				}
+
+				a.thumbnail {
+					@include border-radius(0px);
+					background-color: $white;
+					border: 0px;
+					padding: 4px;
+				}
+			}
+		}
+
+		.btn {
+			width: 199px;
+			text-align: left;
+			margin-left: 2px;
+
+			i { float: right; }
 		}
 	}
 }
