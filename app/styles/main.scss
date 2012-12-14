@@ -245,6 +245,42 @@ header#site-header {
 			}
 		}
 	}
+
+	.floating-calendar {
+		position: absolute;
+		bottom: 70px;
+		display: block;
+		width: 320px;
+		margin-left: 620px;
+
+		header {
+			h1 {
+				@extend h1;
+				font-size: 36px;
+				color: $red;
+				margin-bottom: 8px;
+			}
+		}
+
+		div.calendar {
+			background-color: #EEEEEE;
+			padding: 20px;
+
+			.fc-header-title {
+				h2 {
+					@include site-font(16px, $HeavyFontWeight);
+				}
+			}
+
+			.fc-header-left {
+				text-align: right;
+			}
+
+			.fc-header-right {
+				text-align: left;
+			}
+		}
+	}
 }
 
 ul.home-panes {

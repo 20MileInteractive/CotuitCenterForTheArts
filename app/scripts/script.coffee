@@ -12,3 +12,10 @@ $ ->
 
 	# $(".slidetabs").data("slideshow").play()
 
+	$("div.calendar").fullCalendar
+		header:
+			left:   'prev'
+			center: 'title'
+			right:  'next'
+		default: 'month'
+
