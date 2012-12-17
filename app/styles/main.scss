@@ -245,42 +245,6 @@ header#site-header {
 			}
 		}
 	}
-
-	.floating-calendar {
-		position: absolute;
-		bottom: 70px;
-		display: block;
-		width: 320px;
-		margin-left: 620px;
-
-		header {
-			h1 {
-				@extend h1;
-				font-size: 36px;
-				color: $red;
-				margin-bottom: 8px;
-			}
-		}
-
-		div.calendar {
-			background-color: #EEEEEE;
-			padding: 20px;
-
-			.fc-header-title {
-				h2 {
-					@include site-font(16px, $HeavyFontWeight);
-				}
-			}
-
-			.fc-header-left {
-				text-align: right;
-			}
-
-			.fc-header-right {
-				text-align: left;
-			}
-		}
-	}
 }
 
 ul.home-panes {
@@ -451,5 +415,142 @@ footer {
 				color: darken(#999999, 30%);
 			}
 		}
+	}
+}
+
+.floating-calendar {
+	position: absolute;
+	bottom: 70px;
+	display: block;
+	width: 320px;
+	margin-left: 620px;
+
+	header {
+		h1 {
+			@extend h1;
+			font-size: 36px;
+			color: #EEE;
+			margin-bottom: 8px;
+		}
+	}
+
+	div.calendar {
+		background-color: #EEEEEE;
+		padding: 10px 20px 20px 20px;
+
+		.fc-header-title {
+			h2 {
+				@include site-font(16px, $HeavyFontWeight);
+			}
+		}
+
+		.fc-header-left {
+			text-align: right;
+		}
+
+		.fc-header-right {
+			text-align: left;
+		}
+	}
+}
+
+// jQuery UI Datepicker
+.ui-datepicker {
+
+	width: 100%;
+	height: 298px;
+
+	table, tr, td, th {
+		margin: 0;
+		padding: 0;
+		border: none;
+		border-spacing: 0;
+	}
+
+	table {
+
+		tr {
+
+			th, td {
+				@include site-font(16px, $LighterFontWeight);
+				width: 40px;
+				height: 30px;
+				text-align: center;
+				border: 1px solid #EEEEEE;
+			}
+
+			td {
+				height: 40px;
+				background-color: $white;
+				span {
+					&.ui-state-default {
+						display: none;
+					}
+				}
+
+				a {
+					@include inline-block;
+					color: #EEEEEE;
+					width: 39px;
+					padding: 9px 0px 10px 0px;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+
+				&.highlight {
+					background-color: $red;
+				}
+
+			}
+		}
+	}
+
+	.ui-datepicker-header {
+		position: relative;
+
+		.ui-datepicker-title {
+			text-align: center;
+			@include site-font(16px, $HeavyFontWeight);
+
+			.ui-datepicker-year {
+				display: none;
+			}
+		}
+
+		.ui-datepicker-prev,
+		.ui-datepicker-next {
+			position: absolute;
+			top: 0px;
+			padding: 5px;
+			cursor: pointer;
+
+			span {
+				display: block;
+				width: 6px;
+				height: 10px;
+				text-indent: -9999px;
+
+				background-image: url(layout/calendar-arrows.png);
+			}
+		}
+
+		.ui-datepicker-prev {
+			left: 76px;
+
+			span {
+				background-position: 0px 0px;
+			}
+		}
+
+		.ui-datepicker-next {
+			right: 76px;
+
+			span {
+				background-position: -6px 0px;
+			}
+		}
+
 	}
 }
