@@ -500,7 +500,9 @@ footer {
 				}
 
 				&.highlight {
-					background-color: $red;
+					a {
+						background-color: $red;
+					}
 				}
 
 			}
@@ -553,4 +555,11 @@ footer {
 		}
 
 	}
+}
+
+.pop-cal-container {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-color: green;
 }
