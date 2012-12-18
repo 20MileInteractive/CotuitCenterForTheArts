@@ -44,7 +44,14 @@ module.exports = function( grunt ) {
 
     // headless testing through PhantomJS
     mocha: {
-      all: ['test/**/*.html']
+      all: {
+        src: ['test/index.html'],
+        options: {
+          ui: 'bdd',
+          ignoreLeaks: true //Livereload leaks a global
+        }
+      }
+
     },
 
     // default watch configuration
