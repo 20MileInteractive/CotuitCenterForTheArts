@@ -36,6 +36,7 @@ $ ->
 			{ title: "Blue Man Group", category: "Theater", date: new Date("12/13/2012"), time: "7PM" }, 
 			{ title: "Dinner", category: "Gallery", date: new Date("12/13/2012"), time: "3PM - 6PM" }, 
 			{ title: "Dinner 2", category: "Gallery", date: new Date("12/23/2012"), time: "5PM" }, 
+			{ title: "Dinner 2", category: "Gallery", date: new Date("01/23/2013"), time: "5PM" }, 
 		]
 
 	removeEventsPopUp = ->
@@ -52,7 +53,7 @@ $ ->
 		$.each event_data, (index, evt) ->
 			console.log evt
 			content.append "<header><h1>#{evt.category}</h1</header>"
-			content.append "<strong>#{evt.title}</strong><br>"
+			content.append "<a href=\"\">#{evt.title}</strong><br>"
 			content.append "<span>#{evt.time}</span>"
 
 		section.append content
