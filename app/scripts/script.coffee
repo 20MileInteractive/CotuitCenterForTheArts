@@ -58,7 +58,7 @@ $ ->
 
 		section.append content
 
-		$(".floating-calendar").append section
+		$(".calendar").append section
 		section.position
 			my: "top+10",
 			at: "bottom",

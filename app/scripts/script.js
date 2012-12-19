@@ -62,7 +62,7 @@
         return content.append("<span>" + evt.time + "</span>");
       });
       section.append(content);
-      $(".floating-calendar").append(section);
+      $(".calendar").append(section);
       return section.position({
         my: "top+10",
         at: "bottom",

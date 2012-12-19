@@ -14,6 +14,7 @@ h1 {
 
 .alert {
 	margin-bottom: 10px;
+	margin-top: 30px;
 	span {
 		color: $black;
 		margin-right: 16px;
@@ -168,7 +169,6 @@ header#site-header {
 	background-color: $black;
 	border-bottom: 3px solid $black;
 	position: relative;
-	margin-bottom: 30px;
 
 	.slides {
 
@@ -358,6 +358,15 @@ aside {
 			i { float: right; }
 		}
 	}
+
+	.first {
+
+		margin-bottom: 50px;
+
+		h1 {
+			margin-top: 12px;
+		}
+	}
 }
 
 footer {
@@ -418,47 +427,10 @@ footer {
 	}
 }
 
-.floating-calendar {
-	position: absolute;
-	bottom: 70px;
-	display: block;
-	width: 320px;
-	margin-left: 620px;
-
-	header {
-		h1 {
-			@extend h1;
-			font-size: 36px;
-			color: #EEE;
-			margin-bottom: 8px;
-		}
-	}
-
-	div.calendar {
-		background-color: #EEEEEE;
-		padding: 10px 20px 20px 20px;
-
-		.fc-header-title {
-			h2 {
-				@include site-font(16px, $HeavyFontWeight);
-			}
-		}
-
-		.fc-header-left {
-			text-align: right;
-		}
-
-		.fc-header-right {
-			text-align: left;
-		}
-	}
-}
-
 // jQuery UI Datepicker
 .ui-datepicker {
 
 	width: 100%;
-	height: 298px;
 
 	table, tr, td, th {
 		margin: 0;
@@ -473,14 +445,11 @@ footer {
 
 			th, td {
 				@include site-font(16px, $LighterFontWeight);
-				width: 40px;
-				height: 30px;
 				text-align: center;
 				border: 1px solid #EEEEEE;
 			}
 
 			td {
-				height: 40px;
 				background-color: $white;
 				span {
 					&.ui-state-default {
@@ -491,8 +460,6 @@ footer {
 				a {
 					@include inline-block;
 					color: #EEEEEE;
-					width: 39px;
-					padding: 9px 0px 10px 0px;
 
 					&:hover {
 						text-decoration: none;
@@ -507,6 +474,20 @@ footer {
 
 			}
 		}
+	}
+
+	.fc-header-title {
+		h2 {
+			@include site-font(16px, $HeavyFontWeight);
+		}
+	}
+
+	.fc-header-left {
+		text-align: right;
+	}
+
+	.fc-header-right {
+		text-align: left;
 	}
 
 	.ui-datepicker-header {
@@ -539,21 +520,121 @@ footer {
 		}
 
 		.ui-datepicker-prev {
-			left: 76px;
-
 			span {
 				background-position: 0px 0px;
 			}
 		}
 
 		.ui-datepicker-next {
-			right: 76px;
-
 			span {
 				background-position: -6px 0px;
 			}
 		}
 
+	}
+}
+
+.floating-calendar {
+	position: absolute;
+	bottom: 70px;
+	display: block;
+	width: 320px;
+	margin-left: 620px;
+
+	header {
+		h1 {
+			@extend h1;
+			font-size: 36px;
+			color: #EEE;
+			margin-bottom: 8px;
+		}
+	}
+
+	div.calendar {
+		background-color: #EEEEEE;
+		padding: 10px 20px 20px 20px;
+
+		.ui-datepicker {
+
+			height: 298px;
+
+			table {
+
+				tr {
+
+					th, td {
+						width: 40px;
+						height: 30px;
+					}
+
+					td {
+						height: 40px;
+
+						a {
+							width: 39px;
+							padding: 9px 0px 10px 0px;
+						}
+					}
+				}
+			}
+
+			.ui-datepicker-header {
+				.ui-datepicker-prev {
+					left: 76px;
+				}
+
+				.ui-datepicker-next {
+					right: 76px;
+				}
+
+			}
+		}
+	}
+}
+
+div.aside-calendar {
+
+	div.calendar {
+		background-color: #DDDDDD;
+		padding: 4px;
+		position: relative;
+
+		.ui-datepicker {
+
+			height: 232px;
+
+			table {
+
+				tr {
+
+					th, td {
+						width: 29px;
+						height: 29px;
+						border: 1px solid #DDDDDD;
+					}
+
+					td {
+						height: 29px;
+
+						a {
+							width: 29px;
+							padding: 4px 0px 5px 0px;
+						}
+					}
+				}
+			}
+
+			.ui-datepicker-header {
+				.ui-datepicker-prev {
+					left: 0px;
+				}
+
+				.ui-datepicker-next {
+					right: 0px;
+				}
+
+			}
+		}
 	}
 }
 
@@ -564,6 +645,7 @@ footer {
 	top: 0;
 	left: 0;
 }
+
 .pop-cal-container {
 	position: absolute;
 	
@@ -598,4 +680,8 @@ footer {
 			}
 		}
 	}
+}
+
+section.main {
+	margin-top: 50px;
 }
