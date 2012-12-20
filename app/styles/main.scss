@@ -441,3 +441,14 @@ section.main {
 		}
 	}
 }
+
+.blog-post {
+
+	margin-bottom: 40px;
+	
+	header {
+		h1 {
+			@include site-font(24px, $LighterFontWeight);
+		}
+	}
+}
