@@ -387,6 +387,14 @@ footer {
 
 section.main {
 	margin-top: 50px;
+
+	h3 {
+		@include site-font(24px, $LighterFontWeight);
+		border-bottom: 1px solid #CCC;
+		padding-bottom: 6px;
+		margin-top: 30px;
+		margin-bottom: 40px;
+	}
 }
 
 .sponsor-level {
@@ -408,6 +416,28 @@ section.main {
 		&.last {
 			border-bottom: 0px;
 			margin-bottom: 40px;
+		}
+	}
+}
+
+.event-item {
+
+	margin-bottom: 90px;
+
+	h4 {
+		@include site-font(24px, $HeavyFontWeight);
+		margin: 0px;
+	}
+	h5 {
+		@include site-font(16px, $LighterFontWeight);
+		font-style: italic;
+		margin: 0px;
+	}
+
+	.span5 {
+
+		.row {
+			margin-bottom: 12px;
 		}
 	}
 }
