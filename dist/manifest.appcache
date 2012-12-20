@@ -1,0 +1,58 @@
+CACHE MANIFEST
+
+# Time: Thu Dec 20 2012 15:46:33 GMT-0500 (EST)
+# This manifest was created by confess.js, http://github.com/jamesgpearce/confess
+#
+# Retrieved URL: http://localhost:3501/
+# User-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.12 Safari/535.11
+#
+# Config:
+#  task: appcache
+#  userAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.12 Safari/535.11
+#  wait: 0
+#  consolePrefix: #
+#  verbose: true
+#  appcache:
+#   urlsFromDocument: true
+#   urlsFromRequests: false
+#   cacheFilter: .*
+#   networkFilter: null
+#  url: http://localhost:3501
+#  configFile: /usr/local/lib/node_modules/yeoman/lib/support/confess.json
+
+CACHE:
+http://flickholdr.com/119/119/landscape
+http://flickholdr.com/119/119/nursing
+http://flickholdr.com/119/119/painting
+http://flickholdr.com/119/119/winery
+http://flickholdr.com/240/240/beer
+http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700
+http://localhost:3501/img/glyphicons-halflings-white.png
+http://localhost:3501/img/glyphicons-halflings.png
+http://localhost:3501/styles/layout/angled_arrow.png
+http://localhost:3501/styles/layout/black-arrow.png
+http://localhost:3501/styles/layout/calendar-arrows.png
+http://localhost:3501/styles/layout/cca-logo.jpg
+http://localhost:3501/styles/layout/white-up-arrow.png
+images/1c14def0.events.jpg
+images/27629495.gallery.jpg
+images/7b339892.film.jpg
+images/7e7344e4.slide-entertain.jpg
+images/7eb838b9.slide-illuminate.jpg
+images/a3548cd0.theater.jpg
+images/a98682b9.classes.jpg
+images/b7a462e6.slide-inspire.jpg
+images/cc4076ce.concerts.jpg
+images/d1f976f4.slide-educate.jpg
+scripts/0cc6c49f.script.js
+scripts/vendor/bootstrap/js/dcc49f61.bootstrap-alert.js
+scripts/vendor/jquery-ui/ui/cffc7946.jquery.ui.datepicker.js
+scripts/vendor/jquery-ui/ui/f3a7dcc9.jquery-ui.js
+scripts/vendor/jquery/3576a6e7.jquery.min.js
+scripts/vendor/jquerytools/src/tabs/6dd98b0a.tabs.slideshow.js
+scripts/vendor/jquerytools/src/tabs/f7f42219.tabs.js
+scripts/vendor/modernizr/b2bf8288.modernizr.js
+styles/e49b4437.main.css
+
+NETWORK:
+*

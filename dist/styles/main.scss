@@ -1,0 +1,454 @@
+// Main Style
+
+@import "base";
+@import "site_components";
+
+body {
+	background-color: #EEEEEE;
+}
+
+a, a:hover {
+	color: $red;
+}
+
+h1 {
+	@include site-font(36px, $LighterFontWeight);
+	letter-spacing: 2px;
+	line-height: 40px;
+}
+
+header#site-header {
+
+	background-color: yellow;
+	position: relative;
+	z-index: 999999;
+	
+	div.black-strip {
+		background-color: #111111;
+
+		h1 {
+			margin-top: 0px;
+			margin-bottom: 0px;
+			color: $darkRed;
+		}
+	}
+
+	nav {
+
+		background-color: $red;
+
+		ul {
+			list-style: none;
+			display: block;
+			padding: 0px;
+			margin: 0px 0px 0px 125px;
+
+			li {
+				float: left;
+				position: relative;
+				border-right: 1px solid $black;
+
+				&.here {
+					background-color: $darkRed;
+				}
+
+				a {
+					@include site-font(16px, $LighterFontWeight);
+					display: inline-block;
+					padding: 12px 27px 15px 27px;
+					color: $NavFontColor;
+
+					&:hover {
+						text-decoration: none;
+					}
+
+					span {
+						padding: 0px 20px;
+						background: url(layout/angled_arrow.png) no-repeat right 80%;
+					}
+				}
+
+				ul {
+					display: none;
+					width: 100%;
+					position: absolute;
+					margin: 0px;
+
+					li {
+						float: none;
+						background-color: $darkRed;
+						border-right: 0px;
+
+						a {
+							padding: 10px 10px;
+							display: block;
+							@include site-font(14px, $LighterFontWeight);
+
+							span {
+								padding: 0px;
+								background: none;
+							}
+						}
+					}
+				}
+
+				&:hover {
+					background-color: $darkRed;
+
+					ul {
+						display: block;
+
+						li:hover {
+							background-color: $red;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	a#top-logo {
+		position: absolute;
+		top: 0px;
+		display: block;
+		width: 125px;
+		height: 125px;
+		background: url(layout/cca-logo.jpg) no-repeat left top;
+	}
+
+}
+
+.spotlight-slider {
+	background-color: $black;
+	border-bottom: 3px solid $black;
+	position: relative;
+
+	.slides {
+
+		&.container {
+			width: 1000px;
+			height: 500px;
+		}
+
+		position: relative;
+		display: block;
+		height: 427px;
+
+		.slide {
+			display: none;
+			position: absolute;
+			top: 0px;
+			float: left;
+		}
+	}
+
+	.slidetabs {
+
+		position: absolute;
+		bottom: 0px;
+		width: 940px;
+
+		.slidetab {
+
+			display: block;
+			float: left;
+			margin-right: 10px;
+			margin-bottom: 58px;
+			padding-bottom: 12px;
+
+			&.current {
+
+				background: url(layout/white-up-arrow.png) no-repeat center bottom;
+
+				& + .caption {
+					display: block;
+				}
+
+				span {
+					opacity: 1;
+				}
+			}
+
+			span {
+				@include site-font(24px, $MediumFontWeight);
+				color: #FFF;
+				opacity: 0.6;
+				letter-spacing: 2px;
+				cursor: pointer;
+			}
+		}
+
+		.caption {
+			position: absolute;
+			bottom: 5px;
+			left: 0px;
+			right: 0px;
+
+			display: none;
+			float: right;
+			background: url(layout/white-bg-tile.png);
+			background: rgba(255, 255, 255, 0.5);
+			padding: 16px 16px;
+
+			a {
+				@include site-font(16px, $LighterFontWeight);
+				color: $darkRed;
+				background: url(layout/black-arrow.png) no-repeat right center;
+				padding-right: 30px;
+			}
+
+			span {
+				@include site-font(16px, $LighterFontWeight);
+				color: $darkRed;
+			}
+		}
+	}
+}
+
+ul.home-panes {
+	@include horizontal-list-container;
+
+	li {
+		@include horizontal-list-item(0px);
+		margin:{
+			right: 20px;
+			bottom: 20px;
+		};
+
+		a {
+			display: block;
+
+			&:hover {
+				text-decoration: none;
+
+				span {
+					background-color: $red;
+				}
+			}
+
+			img {
+				display: block;
+			}
+
+			span {
+				display: block;
+				background-color: $darkRed;
+				color: $white;
+				font-weight: $LighterFontWeight;
+				padding: 6px 6px 7px 6px;
+				font-size: 22px;
+				background: $darkRed url(layout/black-arrow.png) no-repeat 97.5% center;
+			}
+		}
+	}
+}
+
+aside {
+	ul {
+		@include no-bullets;
+		margin: 0px;
+		padding: 0px;
+
+		li {
+			@include site-font(24px, $LighterFontWeight);
+			color: #999999;
+			margin-bottom: 10px;
+
+			a {
+				@include site-font(24px, $MediumFontWeight);
+				color: $darkRed;
+
+				&:hover {
+					text-decoration: none;
+					color: lighten($darkRed, 10%);
+				}
+			}
+		}
+	}
+
+	header {
+		h1 {
+			@extend h1;
+			font-size: 24px;
+			color: #999999;
+			letter-spacing: 1px;
+			border-bottom: 1px solid #CCCCCC;
+			margin-top: 40px;
+			margin-bottom: 30px;
+		}
+	}
+
+	form {
+		input[type="email"] {
+			width: 180px;
+		}
+	}
+
+	.sponsor-box {
+		background-color: #EEEEEE;
+		ul.thumbnails {
+			margin: 0px;
+			padding: 1px;
+
+			li {
+				margin: 0px 1px 2px 1px;
+				width: 107px;
+
+				&.top {
+					width: 216px;
+					margin: 0px 1px 0px 1px;
+				}
+
+				a.thumbnail {
+					@include border-radius(0px);
+					background-color: $white;
+					border: 0px;
+					padding: 4px;
+				}
+			}
+		}
+
+		.btn {
+			width: 199px;
+			text-align: left;
+			margin-left: 2px;
+
+			i { float: right; }
+		}
+	}
+
+	.first {
+
+		margin-bottom: 50px;
+
+		h1 {
+			margin-top: 12px;
+		}
+	}
+}
+
+footer {
+
+	header {
+		h1 {
+			@extend h1;
+			font-size: 24px;
+			text-align: center;
+			color: $red;
+			border-bottom: 1px solid #CCCCCC;
+			margin-bottom: 40px;
+		}
+	}
+
+	.span2 {
+		header {
+			h1 {
+				@include site-font(16px, $HeavyFontWeight);
+				text-align: left;
+				line-height: 30px;
+				margin-bottom: 10px
+			}
+		}
+
+		ul {
+			@include no-bullets;
+			margin: 0px 0px 26px 0px;
+			padding: 0px;
+
+			li {
+
+				margin: 5px 0;
+				a {
+					@include site-font(16px, $LighterFontWeight);
+					color: #999999;
+
+					&:hover {
+						text-decoration: none;
+						color: darken(#999999, 30%);
+					}
+				}
+			}
+		}
+	}
+
+	.span3 {
+		@include site-font(14px, $MediumFontWeight);
+		color: #999999;
+		margin-top: 16px;
+		a {
+			color: #999999;	
+			&:hover {
+				text-decoration: none;
+				color: darken(#999999, 30%);
+			}
+		}
+	}
+}
+
+section.main {
+	margin-top: 50px;
+
+	h3 {
+		@include site-font(24px, $LighterFontWeight);
+		border-bottom: 1px solid #CCC;
+		padding-bottom: 6px;
+		margin-top: 30px;
+		margin-bottom: 40px;
+	}
+}
+
+.sponsor-level {
+	h1 {
+		@include site-font(30px, $LighterFontWeight);
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	.span3, .span2, .span1 {
+		margin-bottom: 20px;
+	}
+
+	article {
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid #CCC;
+
+		&.last {
+			border-bottom: 0px;
+			margin-bottom: 40px;
+		}
+	}
+}
+
+.event-item {
+
+	margin-bottom: 90px;
+
+	h4 {
+		@include site-font(24px, $HeavyFontWeight);
+		margin: 0px;
+	}
+	h5 {
+		@include site-font(16px, $LighterFontWeight);
+		font-style: italic;
+		margin: 0px;
+	}
+
+	.span5 {
+
+		.row {
+			margin-bottom: 12px;
+		}
+	}
+}
+
+.blog-post {
+
+	margin-bottom: 40px;
+	
+	header {
+		h1 {
+			@include site-font(24px, $LighterFontWeight);
+		}
+	}
+}
