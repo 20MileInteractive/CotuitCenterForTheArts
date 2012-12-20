@@ -31,17 +31,28 @@
 	}
 }
 
-input[type="email"] {
-	@extend input[type="email"];
+input[type="email"],
+textarea,
+input[type="text"] {
+	@extend input[type="text"];
 	@include border-radius(0px);
 	@include box-shadow(none);
 	border: 1px solid #FFF;
 
 	 &:focus {
-		border-color: rgba(#fff,1);
+		border-color: #ccc;
 		outline: 0;
 		outline: thin dotted \9; /* IE6-9 */
-		@include box-shadow(#{0 1px 1px rgba(0,0,0,.075), 0px 0 8px rgba($red,.6)});
+		@include box-shadow(none);
+	}
+}
+
+label {
+	@include site-font(18px, $MediumFontWeight);
+	.pull-right {
+		color: $red;
+		font-style: italic;
+		font-size: 14px;
 	}
 }
 
