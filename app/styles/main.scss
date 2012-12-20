@@ -1,67 +1,20 @@
 // Main Style
 
 @import "base";
+@import "site_components";
 
 body {
 	background-color: #EEEEEE;
+}
+
+a, a:hover {
+	color: $red;
 }
 
 h1 {
 	@include site-font(36px, $LighterFontWeight);
 	letter-spacing: 2px;
 	line-height: 40px;
-}
-
-.alert {
-	margin-bottom: 10px;
-	margin-top: 30px;
-	span {
-		color: $black;
-		margin-right: 16px;
-	}
-}
-
-.btn {
-	@extend .btn;
-	@include buttonBackground($darkRed, $red, $white, none);
-	@include border-radius(0px);
-	@include site-font(14px, $LighterFontWeight);
-	@include box-shadow(none);
-	padding: 4px 6px 4px 10px;
-	letter-spacing: 1px;
-
-	&.search {
-		@include buttonBackground(#CCC, #CCC, $white, none);
-		@include site-font(15px, $HeavyFontWeight);
-		letter-spacing: 0px;
-		padding: 4px;
-
-		.input-append & {
-			@include border-radius(0px);
-			border: 1px solid #CCC;
-		}
-	}
-}
-
-input[type="email"] {
-	@extend input[type="email"];
-	@include border-radius(0px);
-	@include box-shadow(none);
-	border: 1px solid #FFF;
-
-	 &:focus {
-		border-color: rgba(#fff,1);
-		outline: 0;
-		outline: thin dotted \9; /* IE6-9 */
-		@include box-shadow(#{0 1px 1px rgba(0,0,0,.075), 0px 0 8px rgba($red,.6)});
-	}
-}
-
-.icon-my-arrow {
-	background-image: url(layout/black-arrow.png);
-	background-position: right bottom;
-	background-repeat: no-repeat;
-	padding-left: 8px;
 }
 
 header#site-header {
@@ -242,6 +195,11 @@ header#site-header {
 				color: $darkRed;
 				background: url(layout/black-arrow.png) no-repeat right center;
 				padding-right: 30px;
+			}
+
+			span {
+				@include site-font(16px, $LighterFontWeight);
+				color: $darkRed;
 			}
 		}
 	}
@@ -427,261 +385,29 @@ footer {
 	}
 }
 
-// jQuery UI Datepicker
-.ui-datepicker {
-
-	width: 100%;
-
-	table, tr, td, th {
-		margin: 0;
-		padding: 0;
-		border: none;
-		border-spacing: 0;
-	}
-
-	table {
-
-		tr {
-
-			th, td {
-				@include site-font(16px, $LighterFontWeight);
-				text-align: center;
-				border: 1px solid #EEEEEE;
-			}
-
-			td {
-				background-color: $white;
-				span {
-					&.ui-state-default {
-						display: none;
-					}
-				}
-
-				a {
-					@include inline-block;
-					color: #EEEEEE;
-
-					&:hover {
-						text-decoration: none;
-					}
-				}
-
-				&.highlight {
-					a {
-						background-color: $red;
-					}
-				}
-
-			}
-		}
-	}
-
-	.fc-header-title {
-		h2 {
-			@include site-font(16px, $HeavyFontWeight);
-		}
-	}
-
-	.fc-header-left {
-		text-align: right;
-	}
-
-	.fc-header-right {
-		text-align: left;
-	}
-
-	.ui-datepicker-header {
-		position: relative;
-
-		.ui-datepicker-title {
-			text-align: center;
-			@include site-font(16px, $HeavyFontWeight);
-
-			.ui-datepicker-year {
-				display: none;
-			}
-		}
-
-		.ui-datepicker-prev,
-		.ui-datepicker-next {
-			position: absolute;
-			top: 0px;
-			padding: 5px;
-			cursor: pointer;
-
-			span {
-				display: block;
-				width: 6px;
-				height: 10px;
-				text-indent: -9999px;
-
-				background-image: url(layout/calendar-arrows.png);
-			}
-		}
-
-		.ui-datepicker-prev {
-			span {
-				background-position: 0px 0px;
-			}
-		}
-
-		.ui-datepicker-next {
-			span {
-				background-position: -6px 0px;
-			}
-		}
-
-	}
-}
-
-.floating-calendar {
-	position: absolute;
-	bottom: 70px;
-	display: block;
-	width: 320px;
-	margin-left: 620px;
-
-	header {
-		h1 {
-			@extend h1;
-			font-size: 36px;
-			color: #EEE;
-			margin-bottom: 8px;
-		}
-	}
-
-	div.calendar {
-		background-color: #EEEEEE;
-		padding: 10px 20px 20px 20px;
-
-		.ui-datepicker {
-
-			height: 298px;
-
-			table {
-
-				tr {
-
-					th, td {
-						width: 40px;
-						height: 30px;
-					}
-
-					td {
-						height: 40px;
-
-						a {
-							width: 39px;
-							padding: 9px 0px 10px 0px;
-						}
-					}
-				}
-			}
-
-			.ui-datepicker-header {
-				.ui-datepicker-prev {
-					left: 76px;
-				}
-
-				.ui-datepicker-next {
-					right: 76px;
-				}
-
-			}
-		}
-	}
-}
-
-div.aside-calendar {
-
-	div.calendar {
-		background-color: #DDDDDD;
-		padding: 4px;
-		position: relative;
-
-		.ui-datepicker {
-
-			height: 232px;
-
-			table {
-
-				tr {
-
-					th, td {
-						width: 29px;
-						height: 29px;
-						border: 1px solid #DDDDDD;
-					}
-
-					td {
-						height: 29px;
-
-						a {
-							width: 29px;
-							padding: 4px 0px 5px 0px;
-						}
-					}
-				}
-			}
-
-			.ui-datepicker-header {
-				.ui-datepicker-prev {
-					left: 0px;
-				}
-
-				.ui-datepicker-next {
-					right: 0px;
-				}
-
-			}
-		}
-	}
-}
-
-.ui-widget-overlay {
-	position: absolute;
-	width: 100%;
-    height: 100%;
-	top: 0;
-	left: 0;
-}
-
-.pop-cal-container {
-	position: absolute;
-	
-	.pop-cal-arrow {
-		border-color: transparent transparent #EEEEEE transparent;
-		border-style:solid;
-		border-width:20px;
-		width:0;
-		height:0;
-		position: absolute;
-		top: -36px;
-		left: 104px;
-	}
-
-	.pop-cal-content {
-		display: block;
-		padding: 10px;
-		width: 227px;
-		background-color: #EEEEEE;
-		color: $red;
-		@include single-box-shadow( $black, 0, 0, 20px );
-
-		header {
-			h1 {
-				@include site-font(12px, $HeavyFontWeight);
-				letter-spacing: 1px;
-				color: $black;
-				text-transform: uppercase;
-				border-bottom: 1px solid #CCCCCC;
-				margin: 0px auto 10px auto;
-				line-height: 20px;
-			}
-		}
-	}
-}
-
 section.main {
 	margin-top: 50px;
+}
+
+.sponsor-level {
+	h1 {
+		@include site-font(30px, $LighterFontWeight);
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	.span3, .span2, .span1 {
+		margin-bottom: 20px;
+	}
+
+	article {
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid #CCC;
+
+		&.last {
+			border-bottom: 0px;
+			margin-bottom: 40px;
+		}
+	}
 }
