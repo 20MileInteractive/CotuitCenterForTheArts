@@ -1,13 +1,27 @@
 (function() {
 
   $(function() {
-    var addPopUp, getMonthEvents, highlightDaysWithEvents, homeTabs, removeEventsPopUp, renderDayEventsPopUp, _updateDatepicker_o;
+    /* 
+    	------------------------
+    	Home Page Slideshow Tabs
+    	------------------------
+    */
+
+    var addPopUp, getMonthEvents, highlightDaysWithEvents, homeTabs, navMenu, removeEventsPopUp, renderDayEventsPopUp, _updateDatepicker_o;
     homeTabs = $(".slidetabs").tabs(".slides > .slide", {
       effect: 'fade',
       fadeOutSpeed: "slow",
       rotate: true,
       tabs: 'div.slidetab'
     }).slideshow();
+    $(".slidetabs").data("slideshow").play();
+    /* 
+    	-------------------------
+    	Navigation icon placement
+    	-------------------------
+    */
+
+    navMenu = $("header#site-header nav ul > li:has(ul)").find("a:first > span").addClass("arrow");
     /* 
     	-------------------------
     	Events Calendar functions

@@ -64,7 +64,10 @@ header#site-header {
 
 					span {
 						padding: 0px 20px;
-						background: url(layout/angled_arrow.png) no-repeat right 80%;
+						
+						&.arrow {
+							background: url(layout/angled_arrow.png) no-repeat right 80%;
+						}
 					}
 				}
 

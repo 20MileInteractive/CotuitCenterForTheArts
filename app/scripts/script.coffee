@@ -2,7 +2,11 @@
 
 $ ->
 
-	# Home Page Slideshow Tabs
+	### 
+	------------------------
+	Home Page Slideshow Tabs
+	------------------------
+	###
 	homeTabs = $(".slidetabs").tabs(".slides > .slide", {
 		effect: 'fade',
 		fadeOutSpeed: "slow",
@@ -10,7 +14,18 @@ $ ->
 		tabs: 'div.slidetab'
 	}).slideshow()
 
-	# $(".slidetabs").data("slideshow").play()
+	$(".slidetabs").data("slideshow").play()
+
+	
+
+	### 
+	-------------------------
+	Navigation icon placement
+	-------------------------
+	###
+	navMenu = $("header#site-header nav ul > li:has(ul)").find("a:first > span").addClass "arrow"
+
+
 
 	### 
 	-------------------------
