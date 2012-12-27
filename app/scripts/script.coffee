@@ -14,7 +14,8 @@ $ ->
 		tabs: 'div.slidetab'
 	}).slideshow()
 
-	$(".slidetabs").data("slideshow").play()
+	if $(".slidetabs").length > 0
+		$(".slidetabs").data("slideshow").play()
 
 	
 
