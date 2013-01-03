@@ -26,6 +26,19 @@ $ ->
 	###
 	navMenu = $("header#site-header nav ul > li:has(ul)").find("a:first > span").addClass "arrow"
 
+	### 
+	------------------------
+	Voluteer Form Submission
+	------------------------
+	###
+	volunteerForm = $("form.volunteer-form").on "submit", (event) ->
+		chkbxValues = $("input[type=checkbox].avail:checked").map ->
+			return $(@).val()
+
+		$("#availability").val chkbxValues.get().join(', ')
+		return true
+
+
 
 
 	### 
