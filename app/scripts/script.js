@@ -7,7 +7,7 @@
     	------------------------
     */
 
-    var addPopUp, getMonthEvents, highlightDaysWithEvents, homeTabs, navMenu, removeEventsPopUp, renderDayEventsPopUp, _updateDatepicker_o;
+    var addPopUp, getMonthEvents, highlightDaysWithEvents, homeTabs, navMenu, removeEventsPopUp, renderDayEventsPopUp, volunteerForm, _updateDatepicker_o;
     homeTabs = $(".slidetabs").tabs(".slides > .slide", {
       effect: 'fade',
       fadeOutSpeed: "slow",
@@ -24,6 +24,20 @@
     */
 
     navMenu = $("header#site-header nav ul > li:has(ul)").find("a:first > span").addClass("arrow");
+    /* 
+    	------------------------
+    	Voluteer Form Submission
+    	------------------------
+    */
+
+    volunteerForm = $("form.volunteer-form").on("submit", function(event) {
+      var chkbxValues;
+      chkbxValues = $("input[type=checkbox].avail:checked").map(function() {
+        return $(this).val();
+      });
+      $("#availability").val(chkbxValues.get().join(', '));
+      return true;
+    });
     /* 
     	-------------------------
     	Events Calendar functions
