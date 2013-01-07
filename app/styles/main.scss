@@ -476,3 +476,35 @@ section.main {
 		}
 	}
 }
+
+.member-package {
+
+	margin-bottom: 10px;
+
+	article {
+
+		padding: 1px 10px 1px 20px;
+		background-color: #DDDDDD;
+
+		header {
+
+			padding-right: 40px;
+			background: url(layout/silver-down-arrow.png) no-repeat center right;
+			cursor: pointer;
+
+			&.open {
+				background: url(layout/silver-up-arrow.png) no-repeat center right;
+			}
+
+			h1 {
+				@include site-font(22px, $MediumFontWeight);
+				color: $red;
+			}
+		}
+
+		div.content {
+			display: none;
+			padding: 10px 0px;
+		}
+	}
+}

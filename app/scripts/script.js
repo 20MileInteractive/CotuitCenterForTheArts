@@ -7,7 +7,7 @@
     	------------------------
     */
 
-    var addPopUp, getMonthEvents, highlightDaysWithEvents, homeTabs, navMenu, removeEventsPopUp, renderDayEventsPopUp, volunteerForm, _updateDatepicker_o;
+    var addPopUp, getMonthEvents, highlightDaysWithEvents, homeTabs, navMenu, removeEventsPopUp, renderDayEventsPopUp, togglePackage, _updateDatepicker_o;
     homeTabs = $(".slidetabs").tabs(".slides > .slide", {
       effect: 'fade',
       fadeOutSpeed: "slow",
@@ -25,18 +25,16 @@
 
     navMenu = $("header#site-header nav ul > li:has(ul)").find("a:first > span").addClass("arrow");
     /* 
-    	------------------------
-    	Voluteer Form Submission
-    	------------------------
+    	------------------------------
+    	Become a member toggle package
+    	------------------------------
     */
 
-    volunteerForm = $("form.volunteer-form").on("submit", function(event) {
-      var chkbxValues;
-      chkbxValues = $("input[type=checkbox].avail:checked").map(function() {
-        return $(this).val();
-      });
-      $("#availability").val(chkbxValues.get().join(', '));
-      return true;
+    togglePackage = $(".member-package header").on("click", function() {
+      var header;
+      header = $(this);
+      header.toggleClass("open");
+      return header.parent().children("div.content").slideToggle('fast');
     });
     /* 
     	-------------------------
