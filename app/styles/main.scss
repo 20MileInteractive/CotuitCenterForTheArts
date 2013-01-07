@@ -488,6 +488,7 @@ section.main {
 
 		header {
 
+			@include user-select(none);
 			padding-right: 40px;
 			background: url(layout/silver-down-arrow.png) no-repeat center right;
 			cursor: pointer;
