@@ -2,6 +2,12 @@
 
 $ ->
 
+	# Extend Array class to add unique method
+	Array::unique = ->
+		output = {}
+		output[@[key]] = @[key] for key in [0...@length]
+		value for key, value of output
+
 	### 
 	------------------------
 	Home Page Slideshow Tabs
@@ -26,6 +32,28 @@ $ ->
 	###
 	navMenu = $("header#site-header nav ul > li:has(ul)").find("a:first > span").addClass "arrow"
 
+
+
+
+	### 
+	-----------------------
+	Event Listing Read More
+	-----------------------
+	###
+	eventReadMore = $(".event-item .read-full").on "click", (event)->
+		event.preventDefault()
+		btn = $(@)
+		event_item = btn.parent().parent().parent().parent(".event-item")
+		event_item.find(".extended").slideToggle "fast", ()->
+			if btn.text() == "Read Less"
+				btn.text "Read More" 
+			else
+				btn.text "Read Less" 
+
+
+
+
+
 	### 
 	------------------------------
 	Become a member toggle package
@@ -37,10 +65,6 @@ $ ->
 		header.toggleClass("open")
 		header.parent().children("div.content").slideToggle('fast')
 
-
-
-
-
 	### 
 	-------------------------
 	Events Calendar functions
@@ -48,11 +72,28 @@ $ ->
 	###
 
 	# Because the the event `onChangeMonthYear` get's called before updating 
-	# the items, I'll add my code after the elements get rebuilt. We will hook 
+	# the items, the code is added after the elements get rebuilt. We will hook 
 	# to the `_updateDatepicker` method in the `Datepicker`.
 
 	# Saves the original function.
 	_updateDatepicker_o = $.datepicker._updateDatepicker
+
+	# Events array
+	monthly_events = []
+
+	# Events Categories Map
+	event_categories = []
+
+	event_categories["Black Box Theater"] = "Theater"
+	event_categories["Theater"] = "Theater"
+	event_categories["Exhibit"] = "Gallery"
+	event_categories["Concert"] = "Concerts"
+	event_categories["Gallery Concert"] = "Concerts"
+	event_categories["Film"] = "Film"
+	event_categories["Education"] = "Classes"
+	event_categories["Special Events"] = "Special Events"
+	event_categories["Special Event"] = "Special Events"
+	event_categories["Rental"] = "Special Events"
 
 	# Replaces the function
 	$.datepicker._updateDatepicker = (instance) ->
@@ -61,12 +102,21 @@ $ ->
 
 	# This will hook to ajax methods later
 	getMonthEvents = (year, month) ->
-		[ 
-			{ title: "Blue Man Group", category: "Theater", date: new Date("12/13/2012"), time: "7PM" }, 
-			{ title: "Dinner", category: "Gallery", date: new Date("12/13/2012"), time: "3PM - 6PM" }, 
-			{ title: "Dinner 2", category: "Gallery", date: new Date("12/23/2012"), time: "5PM" }, 
-			{ title: "Dinner 2", category: "Gallery", date: new Date("01/23/2013"), time: "5PM" }, 
-		]
+		month  = 1 if month is 0
+		$.getJSON window.location.origin + '/json/events/'+year+'/'+month, (data)->
+			events = []
+			for e in data
+				evnt = 
+					title: e.title
+					category: event_categories[e.category]
+					date: new Date(e.date)
+					time: e.time
+					event_id: e.event_id
+				events.push evnt
+
+			monthly_events = []
+			monthly_events = events
+			$( "div.calendar" ).datepicker( "refresh" )
 
 	removeEventsPopUp = ->
 		$(".pop-cal-container").remove() if $(".pop-cal-container").length
@@ -79,11 +129,19 @@ $ ->
 		section = $('<section class="pop-cal-container"><i class="pop-cal-arrow"></i></section>')
 		content = $('<div class="pop-cal-content"></div>')
 
-		$.each event_data, (index, evt) ->
-			console.log evt
-			content.append "<header><h1>#{evt.category}</h1</header>"
-			content.append "<a href=\"\">#{evt.title}</strong><br>"
-			content.append "<span>#{evt.time}</span>"
+		# console.log event_data
+
+		groups = (evnt.category for evnt in event_data)
+
+		groups = groups.unique()
+
+		for group in groups
+			content.append "<header><h1 class=\"color-#{group.toLowerCase()}\">#{group}</h1</header>"
+			for evt in event_data
+				if group == evt.category
+					target_url = "https://webformsrig01bo3.blackbaudhosting.com/48291/page.aspx?pid=196&tab=2&txobjid=" + evt.event_id
+					content.append "<a target=\"_blank\" href=\"#{target_url}\">#{evt.title}"
+					content.append "<span>#{evt.time}</span>"
 
 		section.append content
 
@@ -101,9 +159,10 @@ $ ->
 
 		cells.each (index, elem) ->
 			$elem = $(elem)
-			events = getMonthEvents($elem.data("year"), $elem.data("month"))
+			events = monthly_events
 			matching = $.grep events, (event) ->
-				parseInt(event.date.getDate().valueOf()) == parseInt($elem.children("a").text().valueOf())
+				d = new Date(event.date)
+				parseInt(d.getDate().valueOf()) == parseInt($elem.children("a").text().valueOf())
 
 			# Attach events to anchor
 			$elem.children("a").data("evnts", matching)
@@ -115,12 +174,17 @@ $ ->
 
 	highlightDaysWithEvents = (date)->
 		result = [true, '', null]
-		events = getMonthEvents(date.getFullYear(), date.getMonth())
+		events = monthly_events
 		matching = $.grep events, (event) ->
-			event.date.valueOf() == date.valueOf()
+			d = new Date(event.date)
+			d.valueOf() == date.valueOf()
 		if matching.length
 			result = [true, 'highlight', null]
 		return result
+
+	# Initialize with today
+	today = new Date()
+	getMonthEvents(today.getFullYear(), today.getMonth())
 
 
 	$("div.calendar").datepicker
@@ -128,6 +192,7 @@ $ ->
 		showOtherMonths: true
 		dayNamesMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S']
 		beforeShowDay: highlightDaysWithEvents
+		onChangeMonthYear: getMonthEvents
 
 	$("body").on "click", (event) ->
 		removeEventsPopUp()
