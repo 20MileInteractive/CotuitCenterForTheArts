@@ -173,7 +173,7 @@ label {
 
 .floating-calendar {
 	position: absolute;
-	bottom: 70px;
+	bottom: 5px;
 	display: block;
 	width: 320px;
 	margin-left: 620px;
@@ -285,6 +285,7 @@ label {
 
 .pop-cal-container {
 	position: absolute;
+	z-index: 99999;
 	
 	.pop-cal-arrow {
 		border-color: transparent transparent #EEEEEE transparent;

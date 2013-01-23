@@ -15,6 +15,7 @@
 	<!-- Font -->
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700' rel='stylesheet' type='text/css'>
 
+	<!-- Chosen Js -->
 	<link rel="stylesheet" href="styles/main.css"/>
 
 	<script src="scripts/vendor/modernizr/modernizr.js"></script>
@@ -127,6 +128,20 @@
 							<h1>Upcoming Events</h1>
 						</header>
 						<div class="calendar"></div>
+						<div class="program-list-container">
+							<select id="program-list-select" data-placeholder="Show &amp; Search Events" style="width: 100%">
+								<option value=""></option>
+								<optgroup label="Theater">
+									<option value="1">Printmaking 101: The Collagraph Print</option>
+									<option value="2">Advanced Acting for Teens & Adults</option>
+								</optgroup>
+								<optgroup label="Classes">
+									<option value="3">Love Letters: A Benefit for Cotuit Center for the Arts</option>
+									<option value="4">DDD</option>
+									<option value="5">EEE</option>
+								</optgroup>
+							</select>
+						</div>
 					</section>
 				</div>
 			</div>
@@ -386,7 +401,9 @@
 	<script src="scripts/vendor/jquerytools/src/tabs/tabs.js"></script>
 	<script src="scripts/vendor/jquerytools/src/tabs/tabs.slideshow.js"></script>
 	<script src="scripts/vendor/bootstrap/js/bootstrap-alert.js"></script>
-	
+
+	<!-- Chosen Js -->
+	<script src="scripts/vendor/chosen/chosen/chosen.jquery.min.js"></script>
 
 	<!-- Site Scripts -->
 	<script src="scripts/script.js"></script>

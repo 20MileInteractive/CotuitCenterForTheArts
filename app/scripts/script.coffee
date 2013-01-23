@@ -34,6 +34,15 @@ $ ->
 
 
 
+	### 
+	----------------------
+	Program List drop down
+	----------------------
+	###
+	chosenProgramList = $("#program-list-select").chosen()
+
+
+
 
 	### 
 	-----------------------
@@ -112,6 +121,8 @@ $ ->
 					date: new Date(e.date)
 					time: e.time
 					event_id: e.event_id
+					target_url: e.target_url
+					ee_url: e.ee_url
 				events.push evnt
 
 			monthly_events = []
@@ -139,8 +150,12 @@ $ ->
 			content.append "<header><h1 class=\"color-#{group.toLowerCase()}\">#{group}</h1</header>"
 			for evt in event_data
 				if group == evt.category
-					target_url = "https://webformsrig01bo3.blackbaudhosting.com/48291/page.aspx?pid=196&tab=2&txobjid=" + evt.event_id
-					content.append "<a target=\"_blank\" href=\"#{target_url}\">#{evt.title}"
+					target_url = 
+						if evt.ee_url == ''
+							"<a target=\"_blank\" href=\"#{evt.target_url}\">#{evt.title}"
+						else 
+							"<a href=\"#{evt.ee_url}\">#{evt.title}"
+					content.append target_url
 					content.append "<span>#{evt.time}</span>"
 
 		section.append content
