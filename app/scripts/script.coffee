@@ -112,7 +112,7 @@ $ ->
 	# This will hook to ajax methods later
 	getMonthEvents = (year, month) ->
 		month  = 1 if month is 0
-		$.getJSON window.location.origin + '/json/events/'+year+'/'+month, (data)->
+		$.getJSON window.location.host + '/json/events/'+year+'/'+month, (data)->
 			events = []
 			for e in data
 				evnt = 

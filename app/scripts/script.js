@@ -102,7 +102,7 @@
       if (month === 0) {
         month = 1;
       }
-      return $.getJSON(window.location.origin + '/json/events/' + year + '/' + month, function(data) {
+      return $.getJSON(window.location.host + '/json/events/' + year + '/' + month, function(data) {
         var e, events, evnt, _i, _len;
         events = [];
         for (_i = 0, _len = data.length; _i < _len; _i++) {
