@@ -273,6 +273,28 @@ label {
 			}
 		}
 	}
+
+	div.program-list-container {
+		li {
+			@include site-font(13px, $LighterFontWeight);
+			color: #999999;
+			margin-bottom: 10px;
+
+			a {
+				@include site-font(13px, $LighterFontWeight);
+				color: $darkRed;
+
+				&:hover {
+					text-decoration: none;
+					color: lighten($darkRed, 10%);
+				}
+			}
+		}
+
+		.chzn-container .chzn-results li {
+			margin: 0;
+		}
+	}
 }
 
 .ui-widget-overlay {
